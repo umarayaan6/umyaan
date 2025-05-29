@@ -1,0 +1,103 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 0 0% 100%; /* Light Background */
+        --foreground: 224 71.4% 4.1%; /* Dark Text */
+
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+
+        --primary: 202 92% 59%; /* Vibrant Blue - Sky 500 */
+        --primary-foreground: 0 0% 100%; /* White text on primary */
+
+        --secondary: 240 4.8% 95.9%; /* Light Gray */
+        --secondary-foreground: 224 71.4% 4.1%;
+
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+
+        --accent: 340 82% 61%; /* Vibrant Pink/Rose - Rose 500 */
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 72.2% 50.6%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 202 92% 59%; /* Primary color for rings */
+
+        --radius: 0.75rem; /* Slightly more rounded */
+      }
+
+      .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+
+        --primary: 202 82% 59%; /* Keep primary vibrant */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 210 20% 98%;
+
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+
+        --accent: 340 72% 51%; /* Keep accent vibrant */
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 202 82% 59%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+      }
+    }
+
+    /* Custom scrollbar for a more modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.5);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.7);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary));
+    }
+
+    .resume-preview-container {
+      aspect-ratio: 210 / 297; /* A4 paper aspect ratio */
+      width: 100%;
+      max-width: 600px; /* Adjust as needed */
+      margin: 0 auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
